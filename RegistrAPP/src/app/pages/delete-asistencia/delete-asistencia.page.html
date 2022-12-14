@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Eliminar</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button 
+        defaultHref="/asistenciasqr"
+        text="Atras"
+        color="dark"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="boton">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle style="color: rgb(21, 67, 168);"><strong>ID {{ asistencia.id }}</strong></ion-card-subtitle>
+      <ion-card-title style="color: rgb(21, 67, 168);"><strong>Realmente desea eliminar a {{  asistencia.seccion }}?</strong></ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-button (click)="eliminarAsistencia()" expand="block">Eliminar</ion-button>
+    </ion-card-content>
+
+  </ion-card>
+</ion-content>

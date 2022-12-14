@@ -1,0 +1,31 @@
+<ion-header class="cabeza">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="start" name="menu-outline"></ion-icon>
+        
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Camara</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <img src="assets/logo_app_3.png">
+    <ion-card-content style="padding-top: 30%;">
+      <ion-button (click)="camara()" expand="block" fill="clear" shape="round">
+        Abrir Camara
+      </ion-button>
+      
+      <div class="ion-padding">
+        <img *ngIf="image" [src]="image" alt="image">
+      </div>
+
+
+
+
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>

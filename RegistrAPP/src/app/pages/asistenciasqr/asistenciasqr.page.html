@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Listar Asistencias</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button 
+        defaultHref="/codigo"
+        text="Atras"
+        color="dark"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="boton">
+  <ion-list style="background-color: rgb(21, 67, 168);">
+    <ion-item *ngFor="let a of asistencias; let indexArray = index" [routerLink]="['/detail-asistencia',a.id]">
+      <ion-label>{{a.seccion}} </ion-label>
+      <ion-label>{{a.fecha}}</ion-label>
+      </ion-item>
+  </ion-list>
+
+  <ion-button expand="block" [routerLink]="['/crearasistenciasqr']">
+    Agregar
+  </ion-button>
+
+</ion-content>

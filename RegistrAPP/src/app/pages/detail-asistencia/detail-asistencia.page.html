@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>detail-asistencia</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button 
+        defaultHref="/asistenciasqr"
+        text="Atras"
+        color="dark"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="boton">
+<ion-card>
+  <ion-card-header>
+    <ion-card-subtitle style="color: rgb(21, 67, 168);"><strong>ID {{ asistencia.id }}</strong></ion-card-subtitle>
+    <ion-card-title style="color: rgb(21, 67, 168);"><strong>Su Seccion:  {{  asistencia.seccion }}</strong></ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <strong>{{ asistencia.fecha }}</strong>
+  </ion-card-content>
+  <ion-button [routerLink]="['/update-asistencia',asistencia.id]">Editar</ion-button>
+  <ion-button [routerLink]="['/delete-asistencia',asistencia.id]">Borrar</ion-button>
+  <ion-card class="ion-text-center">
+    <ion-card-content>
+
+
+
+
+      <ion-button 
+      expand="block" 
+      class="ion-margin" 
+      (click)="verScan()"
+          Ver QR Code  
+          expand="block" 
+          class="ion-margin" 
+          (click)="generaScan()">
+          Generate QR Code  
+      </ion-button>
+      <qrcode 
+        [qrdata]="qrCodeString" 
+        [width]="256" 
+        [errorCorrectionLevel]="'M'">
+      </qrcode>
+
+
+    </ion-card-content>
+ </ion-card>
+
+
+
+  <ion-item>
+    <ion-label class="ion-text-wrap">Scan Result:</ion-label>
+    <br>
+    <ion-label class="ion-text-wrap">{{scannedResult}}</ion-label>
+    <ion-label class="ion-text-wrap">{{scannedResult2}}</ion-label>
+  </ion-item>
+</ion-card>
+</ion-content>

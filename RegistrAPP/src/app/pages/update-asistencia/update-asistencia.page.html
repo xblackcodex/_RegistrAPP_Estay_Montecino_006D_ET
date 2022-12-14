@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Actualizar</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button 
+        defaultHref="/asistenciasqr"
+        text="Atras"
+        color="dark"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="boton">
+  <form>
+    <ion-item lines="full">
+      <ion-label position="floating">Seccion: </ion-label>
+      <ion-input type="text" name="txtSeccion" [(ngModel)]="asistencia.seccion" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Fecha: </ion-label>
+      <ion-input type="text" name="txtFecha" [(ngModel)]="asistencia.fecha" required></ion-input>
+    </ion-item>
+
+        <ion-button (click)="updateAsistencia()" expand="block">
+          Actualizar
+        </ion-button>
+  </form>
+</ion-content>

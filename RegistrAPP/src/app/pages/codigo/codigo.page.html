@@ -1,0 +1,57 @@
+<ion-header class="cabeza">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="start" name="menu-outline"></ion-icon>
+        
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Codigo QR</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  class="boton">
+  <ion-card>
+    <img src="assets/logo_app_3.png">
+    <ion-card style="padding: 5%;">
+      <ion-label position="fiixed"><Strong>Ingrese Modulo: </Strong></ion-label>
+      <ion-input type="text" style="color: black;" [(ngModel)]="usuario.modul" required></ion-input>
+      <ion-label position="fiixed"><Strong>Ingrese Fecha: </Strong></ion-label>
+      <ion-input type="text" style="color: black;" [(ngModel)]="usuario.fecha" required></ion-input>
+    </ion-card>
+
+    <ion-card style="background-color: rgb(151, 182, 248)"></ion-card>
+    
+    <ion-card class="ion-text-center">
+      <ion-button (click)="generarQR()" class="ion-margin" expand="block" fill="outline" shape="round">
+        Generar QR
+      </ion-button>
+
+      <qrcode [qrdata]="qrCodeString" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+    </ion-card>
+
+    <ion-card style="background-color: rgb(151, 182, 248)"></ion-card>
+
+    <ion-button (click)="VerQR()" class="ion-margin" expand="block" fill="outline" shape="round">
+      VER QR
+    </ion-button>
+
+    <ion-card style="padding: 5%;">
+      <ion-label position="fiixed"><Strong>Ese QR pertenece a: </Strong></ion-label>
+      <br>
+      <ion-label style="color: black;">{{ scannedResult }} </ion-label>
+      <ion-label style="color: black;">{{ scannedResult2 }}</ion-label>
+    </ion-card>
+
+    <ion-button 
+        expand="block" 
+        class="ion-margin" 
+        routerLink="/asistenciasqr">
+        Ver la Asistencia
+    </ion-button>
+      
+    <ion-card style="background-color: rgb(151, 182, 248)">
+      
+    </ion-card>
+  </ion-card>
+</ion-content>
